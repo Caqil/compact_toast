@@ -5,6 +5,12 @@ A beautiful, customizable, and feature-rich toast notification plugin for Flutte
 [![pub package](https://img.shields.io/pub/v/compact_toast.svg)](https://pub.dev/packages/compact_toast)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## 📱 Demo
+
+<p align="center">
+  <img src="demo.gif" alt="CompactToast Demo" width="300"/>
+</p>
+
 ## ✨ Features
 
 - 🎨 **Beautiful UI Design** - Pill-shaped toasts with smooth animations
