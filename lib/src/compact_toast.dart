@@ -583,13 +583,17 @@ class _CompactToastState extends State<CompactToast>
       children: [
         messageWidget,
         if (hasActions && actionCount > 1) ...[
-          const SizedBox(height: 6),
-          Wrap(
-            spacing: 6,
-            runSpacing: 4,
-            children: widget.actions!
-                .map((action) => _buildAction(context, action))
-                .toList(),
+          const SizedBox(height: 8),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 6,
+              alignment: WrapAlignment.end,
+              children: widget.actions!
+                  .map((action) => _buildAction(context, action))
+                  .toList(),
+            ),
           ),
         ],
       ],
@@ -605,20 +609,20 @@ class _CompactToastState extends State<CompactToast>
       decoration: BoxDecoration(
         color: action.backgroundColor ??
             (isDark
-                ? actionColor.withValues(alpha: 0.15)
-                : actionColor.withValues(alpha: 0.1)),
-        borderRadius: BorderRadius.circular(8),
+                ? actionColor.withValues(alpha: 0.2)
+                : actionColor.withValues(alpha: 0.12)),
+        borderRadius: BorderRadius.circular(6),
         border: Border.all(
           color: action.backgroundColor != null
               ? Colors.transparent
-              : actionColor.withValues(alpha: 0.2),
+              : actionColor.withValues(alpha: 0.25),
           width: 0.5,
         ),
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(6),
           onTap: () {
             action.onTap();
             if (action.dismissOnTap) {
@@ -626,7 +630,7 @@ class _CompactToastState extends State<CompactToast>
             }
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -645,6 +649,7 @@ class _CompactToastState extends State<CompactToast>
                     fontWeight: FontWeight.w600,
                     fontSize: 11.5,
                     letterSpacing: 0.1,
+                    height: 1.0,
                   ),
                 ),
               ],
